@@ -1,8 +1,8 @@
 # idea
 .idea
-/idea
-/lib
-/target
-/out
-.gradle
-.dbConnection.properties
+idea/
+lib/
+target/
+out/
+*.gradle
+dbConnection.properties
