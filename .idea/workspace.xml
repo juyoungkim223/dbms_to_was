@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d869ab4e-573e-44b1-b268-f7727e84a94e" name="Default Changelist" comment="" />
+    <list default="true" id="d869ab4e-573e-44b1-b268-f7727e84a94e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +40,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -53,6 +58,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1bCdsHXiKvRvw1jpBo4MnHl7Ftl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -73,7 +79,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3546618" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -262,7 +268,7 @@
       <workItem from="1588140219664" duration="11952000" />
       <workItem from="1588156717254" duration="575000" />
       <workItem from="1588157310159" duration="3494000" />
-      <workItem from="1588208719530" duration="26214000" />
+      <workItem from="1588208719530" duration="27080000" />
     </task>
     <servers />
   </component>
@@ -354,10 +360,11 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state width="207" height="477" key="HiddenNamespacesPopup/0.0.1680.1010/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1588143498437" />
-    <state x="-1884" y="71" width="1304" height="850" key="SettingsEditor" timestamp="1588297979819">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="32" y="69" width="1304" height="850" key="SettingsEditor" timestamp="1588380877104">
+      <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="-1884" y="71" width="1304" height="850" key="SettingsEditor/0.0.1680.1010/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1588297979819" />
+    <state x="32" y="69" key="SettingsEditor/0.0.1680.1010/-1920.0.1920.1040@0.0.1680.1010" timestamp="1588380877104" />
     <state x="-1268" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1588208720011">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
