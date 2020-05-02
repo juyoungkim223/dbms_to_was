@@ -1,5 +1,5 @@
 # dbms_to_was
-library for dbms to was
+A dbms_to_was library based on Spring Framework.
 
 ### Function
 1. DBMS <-> WAS  
