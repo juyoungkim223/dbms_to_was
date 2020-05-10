@@ -1,9 +1,9 @@
 package database.connect.mssql;
 
-import database.connect.JavaConnector;
+import database.JavaSqlConnector;
 import java.sql.SQLException;
 
-public class mssqlJavaConnector extends JavaConnector {
+public class MssqlJavaSqlConnector extends JavaSqlConnector {
     private static Class<?> jdbcDriver = null;
 
     static {
@@ -14,7 +14,10 @@ public class mssqlJavaConnector extends JavaConnector {
         }
     }
 
-    public mssqlJavaConnector(String connectionUrl) throws SQLException {
+    public MssqlJavaSqlConnector(String connectionUrl) throws SQLException {
         connect(connectionUrl);
+    }
+    public MssqlJavaSqlConnector(String connectionUrl, String username, String password) throws SQLException {
+        connect(connectionUrl, username, password);
     }
 }

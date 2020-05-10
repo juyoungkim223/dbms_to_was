@@ -1,10 +1,10 @@
 package database.connect.mysql;
 
-import database.connect.JavaConnector;
+import database.JavaSqlConnector;
 
 import java.sql.SQLException;
 
-public class mysqlJavaConnector extends JavaConnector {
+public class MysqlJavaSqlConnector extends JavaSqlConnector {
     private static Class<?> jdbcDriver = null;
 
     static {
@@ -15,7 +15,11 @@ public class mysqlJavaConnector extends JavaConnector {
         }
     }
 
-    public mysqlJavaConnector(String connectionUrl) throws SQLException {
+    public MysqlJavaSqlConnector(String connectionUrl) throws SQLException {
         connect(connectionUrl);
+    }
+
+    public MysqlJavaSqlConnector(String connectionUrl, String username, String password) throws SQLException {
+        connect(connectionUrl, username, password);
     }
 }
