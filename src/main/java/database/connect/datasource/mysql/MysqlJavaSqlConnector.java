@@ -1,4 +1,4 @@
-package database.connect.mysql;
+package database.connect.datasource.mysql;
 
 import database.JavaSqlConnector;
 

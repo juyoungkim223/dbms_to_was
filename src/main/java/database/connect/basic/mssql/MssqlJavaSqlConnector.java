@@ -1,4 +1,4 @@
-package database.connect.mssql;
+package database.connect.basic.mssql;
 
 import database.JavaSqlConnector;
 import java.sql.SQLException;

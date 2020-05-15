@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:tr="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
 
     <title>dbms to was</title>
 </head>
 <body>
-<!--/*@thymesVar id="message" type="org.thymeleaf.Thymeleaf"*/-->
 <p th:text="${message}"></p>
-<h1>Spring MVC + Thymeleaf  Hello World example</h1>
+<table>
+    <tr th:each="ele : ${perm2}">
+        <td th:text="${ele}"></td>
+    <tr th/>
+</table>
 </body>
 </html>

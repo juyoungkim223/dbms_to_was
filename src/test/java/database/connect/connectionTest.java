@@ -1,6 +1,6 @@
 package database.connect;
 
-import database.connect.mssql.MssqlJavaSqlConnector;
+import database.connect.basic.mssql.MssqlJavaSqlConnector;
 import org.junit.Before;
 import org.junit.Test;
 import java.io.*;

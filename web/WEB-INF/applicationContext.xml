@@ -7,5 +7,20 @@
        http://www.springframework.org/schema/context
        https://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
-
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <value>classpath:dbConnection.properties</value>
+        </property>
+    </bean>
+    <bean id="dbcp2" class="org.apache.commons.dbcp2.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="${mysqlDriver}"/>
+        <property name="url" value="${mysqlServerConnectionUrl}"/>
+        <property name="username" value="${mysqlServerConnectionUsername}"/>
+        <property name="password" value="${mysqlServerConnectionPassword}"/>
+        <property name="initialSize" value="3"/>
+        <!--p:maxActive="${db.maxActive}"
+          p:maxIdle="${db.maxIdle}"
+          p:maxWait="${db.maxWait}"-->
+    </bean>
 </beans>

@@ -1,21 +1,27 @@
 package com.common.controller;
 
-import database.connect.mssql.MssqlJavaSqlConnector;
-import database.connect.mysql.MysqlJavaSqlConnector;
-import database.connect.oracle.OracleJavaSqlConnector;
+import database.JavaSqlxConnector;
+import database.connect.basic.mssql.MssqlJavaSqlConnector;
+import database.connect.basic.mysql.MysqlJavaSqlConnector;
+import database.connect.basic.oracle.OracleJavaSqlConnector;
 import database.sql.SqlConnection;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 @RestController
 @PropertySource("classpath:dbConnection.properties")
 public class ConnectionController {
+    @Autowired
+    DataSource dataSource;
+
     @Value("${mssqlServerConnectionUrl}")
     String mssqlServerConnectionUrl;
     @Value("${mssqlServerConnectionUsername}")
@@ -55,7 +61,9 @@ public class ConnectionController {
             MssqlJavaSqlConnector connector = new MssqlJavaSqlConnector(mssqlServerConnectionUrl, mssqlServerConnectionUsername, mssqlServerConnectionPassword);
             res = connector.getConnection().toString();
             SqlConnection sqlConnection = new SqlConnection(connector.getConnection());
-            
+            //sqlConnection.prepareStatement();
+            sqlConnection.closeAll();
+
             connector.close();
         } catch(SQLException ex) {
             ex.printStackTrace();
@@ -87,5 +95,13 @@ public class ConnectionController {
             ex.printStackTrace();
         }
         return "home.jsp";
+    }
+
+    @GetMapping("/datasource")
+    public String javaxMysqlConnector() throws SQLException {
+        String res = dataSource.toString();
+        Connection conn = dataSource.getConnection();
+
+        return conn.toString();
     }
 }

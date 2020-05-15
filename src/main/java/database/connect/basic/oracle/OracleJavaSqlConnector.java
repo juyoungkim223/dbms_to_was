@@ -1,4 +1,4 @@
-package database.connect.oracle;
+package database.connect.basic.oracle;
 
 import database.JavaSqlConnector;
 import java.sql.SQLException;

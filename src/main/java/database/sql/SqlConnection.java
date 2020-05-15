@@ -37,6 +37,7 @@ public class SqlConnection implements Connection {
 
     public Statement createStatement() throws SQLException {
         Statement stmt = conn.createStatement();
+
         statement.add(stmt);
         return stmt;
     }
