@@ -5,7 +5,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-//common features :get connection with each db vendor without connection pool
+/*common features :get connection with each db vendor without connection pool
+Driver loading is the role of implementation class, abstract class is abstraction only.*/
 @Getter
 @NoArgsConstructor
 @ToString

@@ -1,6 +1,5 @@
 package com.common.controller;
 
-import database.JavaSqlxConnector;
 import database.connect.basic.mssql.MssqlJavaSqlConnector;
 import database.connect.basic.mysql.MysqlJavaSqlConnector;
 import database.connect.basic.oracle.OracleJavaSqlConnector;
@@ -8,7 +7,6 @@ import database.sql.SqlConnection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +15,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 @RestController
-@PropertySource("classpath:dbConnection.properties")
+@PropertySource("classpath:db.properties")
 public class ConnectionController {
     @Autowired
     DataSource dataSource;
@@ -71,11 +69,12 @@ public class ConnectionController {
         return res;
     }
 
-    //service mysql start
     @GetMapping("/home3")
     public String mysqlconnector() {
         String res = null;
+
         try {
+            dataSource.getConnection();
             MysqlJavaSqlConnector connector = new MysqlJavaSqlConnector(mysqlServerConnectionUrl, mysqlServerConnectionUsername, mysqlServerConnectionPassword);
             res = connector.getConnection().toString();
             connector.close();
@@ -99,7 +98,6 @@ public class ConnectionController {
 
     @GetMapping("/datasource")
     public String javaxMysqlConnector() throws SQLException {
-        String res = dataSource.toString();
         Connection conn = dataSource.getConnection();
 
         return conn.toString();
