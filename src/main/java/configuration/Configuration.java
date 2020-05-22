@@ -10,7 +10,9 @@ public interface Configuration {
     }
     ConfigFileType getFile() throws IOException;
 
-    String getKey(String key);
+    String getKey(String text);
+
+    String getValue(String key);
 
     Set<String> getKeys();
 

@@ -11,11 +11,10 @@
        https://www.springframework.org/schema/context/spring-context.xsd">
 
     <mvc:annotation-driven/> <!-- Annotation 활성화 -->
-    <context:annotation-config/> <!-- is used for activating annotations in beans already registered in the application context  -->
     <context:component-scan base-package="com.common.controller"/>
     <context:component-scan base-package="com.common.demo"/>
-    <context:component-scan base-package="database"/>
-    <context:component-scan base-package="configuration"/>
+    <context:annotation-config/> <!-- is used for activating annotations in beans already registered in the application context  -->
+
     <!-- Chaining ViewResolver -->
     <bean id="springTemplateResolver"
           class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
