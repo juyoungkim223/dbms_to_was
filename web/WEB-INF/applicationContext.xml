@@ -22,6 +22,6 @@
     </bean>
 
     <bean id="cofigurationSetting" class="configuration.ConfigurationSetting"/>
-    <bean class="com.common.vo.User"/>
+
     <bean class="configuration.ConfigurationSetting"/>
 </beans>

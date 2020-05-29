@@ -1,7 +1,6 @@
 package com.common.controller;
 
 import com.common.vo.User;
-import configuration.ConfigurationSetting;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -12,13 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-import com.
+import java.util.Set;
+
+import com.xml.configuration.*;
 
 
 @RestController
 @PropertySource("classpath:application.properties")
 public class ConfigController {
     ConfigurationSetting configurationSetting = new ConfigurationSetting();
+    ConfigurationSetting configuration = new ConfigurationSetting();
     //add to application context as bean
     @Value("${dbConfigFile}")
     String configFileName;
@@ -32,11 +34,11 @@ public class ConfigController {
     }
     @GetMapping("/configByJar")
     public void configByJar() {
-        try {
-
+        /*try {
+            Configuration.
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     @GetMapping("/config2")
