@@ -1,7 +1,5 @@
 package com.common.controller;
 
-import com.common.vo.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.ClassPathResource;
@@ -11,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.Set;
 
 import com.xml.configuration.*;
 

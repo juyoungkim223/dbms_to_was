@@ -4,5 +4,6 @@ idea/
 lib/
 target/
 out/
+dbms-to-was.iml
 *.gradle
 db.properties
