@@ -1,5 +1,4 @@
-package configuration;
-
+package com.common.configuration;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;

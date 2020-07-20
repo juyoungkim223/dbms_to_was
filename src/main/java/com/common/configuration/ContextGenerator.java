@@ -1,4 +1,4 @@
-package configuration;
+package com.common.configuration;
 
 import java.io.*;
 import java.util.Set;

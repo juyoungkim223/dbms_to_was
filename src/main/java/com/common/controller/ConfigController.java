@@ -10,24 +10,24 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-import com.xml.configuration.*;
+//import com.xml.configuration.*;
 
 
 @RestController
 @PropertySource("classpath:application.properties")
 public class ConfigController {
-    ConfigurationSetting configurationSetting = new ConfigurationSetting();
-    ConfigurationSetting configuration = new ConfigurationSetting();
+    //ConfigurationSetting configurationSetting = new ConfigurationSetting();
+    //ConfigurationSetting configuration = new ConfigurationSetting();
     //add to application context as bean
     @Value("${dbConfigFile}")
     String configFileName;
     @GetMapping("/config")
     public void config() {
-        try {
-            configurationSetting.getFile();
+       /* try {
+           // configurationSetting.getFile();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
     @GetMapping("/configByJar")
     public void configByJar() {

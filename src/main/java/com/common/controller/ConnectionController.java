@@ -1,5 +1,7 @@
 package com.common.controller;
 
+import com.common.vo.Top;
+import com.common.vo.User;
 import database.connect.basic.mssql.MssqlJavaSqlConnector;
 import database.connect.basic.mysql.MysqlJavaSqlConnector;
 import database.connect.basic.oracle.OracleJavaSqlConnector;
@@ -7,16 +9,18 @@ import database.sql.SqlConnection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @PropertySource("classpath:db.properties")
 public class ConnectionController {
+
     @Autowired
     DataSource dataSource;
 
@@ -101,5 +105,29 @@ public class ConnectionController {
         Connection conn = dataSource.getConnection();
 
         return conn.toString();
+    }
+
+    @GetMapping("/getUser")
+    public List<User> getUser() {
+        int i = 0; List<User> list = new ArrayList<>();
+        while(i < 10) {
+            User user = new User();
+            user.setUser("user" + i);
+            user.setPassword("pw" + i);
+            list.add(user);
+            i++;
+        }
+        return list;
+    }
+
+    @PostMapping("/getTop")
+    public List<User> getTop(@RequestParam Integer t) {
+        List<User> list = getUser();
+        List<User> res = new ArrayList<>();
+        System.out.println(t.toString());
+        for(int i = 0; i < t; i++) {
+            res.add(list.get(i));
+        }
+        return res;
     }
 }

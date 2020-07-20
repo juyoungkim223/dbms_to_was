@@ -1,6 +1,6 @@
 package com.common;
 
-import configuration.*;
+import com.common.configuration.*;
 import org.springframework.web.context.ContextLoaderListener;
 import javax.servlet.ServletContextEvent;
 import java.util.List;

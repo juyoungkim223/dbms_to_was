@@ -1,11 +1,11 @@
-package configuration;
+package com.common.configuration;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.ResourceLoader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
+
 
 //Bill Pugh Solution for singleton pattern
 public class PropertyReader implements Reader {
@@ -45,6 +45,7 @@ public class PropertyReader implements Reader {
     }
 
     public Map<String, List<BeanInfo>> getAllPropertyMap() {
+        System.out.println("properties.keySet().size()" + properties.keySet().size());
         for(Object o : properties.keySet()) {
            String s = o.toString();
            BeanInfo beanInfo = resolveBeanInfo(s);
@@ -55,8 +56,8 @@ public class PropertyReader implements Reader {
            beanInfos.add(beanInfo);
            map.put(beanInfo.getBeanName(), beanInfos);
         }
-        map.forEach((k,v) -> Collections.sort(map.get(k), new BeanInfoComparator()));
-        map.forEach((k,v) -> {
+        map.forEach((k, v) -> Collections.sort(map.get(k), new BeanInfoComparator()));
+        map.forEach((k, v) -> {
             for(BeanInfo s : map.get(k)) {
                 System.out.println(k + " : " + s.toString());
             }
@@ -66,6 +67,7 @@ public class PropertyReader implements Reader {
 
     public BeanInfo resolveBeanInfo(String s1) {
         BeanInfo beanInfo = new BeanInfo();
+        beanInfo.setPropertyValue(properties.getProperty(s1));
         int first = s1.indexOf('.');
         beanInfo.setBeanName(s1.substring(0, first));
 

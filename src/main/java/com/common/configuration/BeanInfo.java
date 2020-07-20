@@ -1,4 +1,4 @@
-package configuration;
+package com.common.configuration;
 
 public class BeanInfo{
     enum BType {
@@ -21,21 +21,24 @@ public class BeanInfo{
     private String beanName;
     private BType type;
     private String propertyName;
+    private String propertyValue;
 
     public BeanInfo() {}
 
-    public BeanInfo(String beanName, BType type, String propertyName) {
+    public BeanInfo(String beanName, BType type, String propertyName, String propertyValue) {
         this.beanName = beanName;
         this.type = type;
         this.propertyName = propertyName;
+        this.propertyValue = propertyValue;
     }
 
     @Override
     public String toString() {
         return "BeanInfo{" +
                 "beanName='" + beanName + '\'' +
-                ", type='" + type + '\'' +
+                ", type=" + type +
                 ", propertyName='" + propertyName + '\'' +
+                ", propertyValue='" + propertyValue + '\'' +
                 '}';
     }
 
@@ -51,10 +54,11 @@ public class BeanInfo{
         return type.getValue();
     }
 
-
     public String getPropertyName() {
         return propertyName;
     }
+
+    public String getPropertyValue() {return propertyValue;};
 
     public void setBeanName(String beanName) {
         this.beanName = beanName;
@@ -66,5 +70,9 @@ public class BeanInfo{
 
     public void setPropertyName(String propertyName) {
         this.propertyName = propertyName;
+    }
+
+    public void setPropertyValue(String propertyValue) {
+        this.propertyValue = propertyValue;
     }
 }
